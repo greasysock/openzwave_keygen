@@ -24,29 +24,34 @@ def ran_hex():
     seq = range(16)
     return "%s%s" % (to_hex(secrets.choice(seq)), to_hex(secrets.choice(seq)))
 
+def hex_keychain():
+    val_list = list()
 
-val_list = list()
+    for spot in range(RAN_SPOTS):
+        gen = ran_hex()
+        val_list.append(gen)
 
-for spot in range(RAN_SPOTS):
-    gen = ran_hex()
-    val_list.append(gen)
+    out_val = out_string % (val_list[0],
+                            val_list[1],
+                            val_list[2],
+                            val_list[3],
+                            val_list[4],
+                            val_list[5],
+                            val_list[6],
+                            val_list[7],
+                            val_list[8],
+                            val_list[9],
+                            val_list[10],
+                            val_list[11],
+                            val_list[12],
+                            val_list[13],
+                            val_list[14],
+                            val_list[15]
+                            )
+    return out_val
 
-out_val = out_string % (val_list[0],
-                        val_list[1],
-                        val_list[2],
-                        val_list[3],
-                        val_list[4],
-                        val_list[5],
-                        val_list[6],
-                        val_list[7],
-                        val_list[8],
-                        val_list[9],
-                        val_list[10],
-                        val_list[11],
-                        val_list[12],
-                        val_list[13],
-                        val_list[14],
-                        val_list[15]
-                        )
+if __name__ == "__main__":
 
-print(out_val)
+    out_val = hex_keychain()
+
+    print(out_val)
